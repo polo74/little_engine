@@ -1,0 +1,133 @@
+\hypertarget{classBody}{}\doxysection{Body Class Reference}
+\label{classBody}\index{Body@{Body}}
+
+
+{\ttfamily \#include $<$body.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBody_a942ced86911289343effadb593544412}{Body}} (\mbox{\hyperlink{classPhysics}{Physics}} $\ast$physics, bt\+Rigid\+Body $\ast$body)
+\item 
+\mbox{\hyperlink{classBody_abe1c4da65568cf7978b6247affc461e3}{$\sim$\+Body}} ()
+\item 
+void \mbox{\hyperlink{classBody_a2a601245c702486f7260004ed3b5df82}{set\+User\+Pointer}} (void $\ast$pointer)
+\item 
+void $\ast$ \mbox{\hyperlink{classBody_a39d9eff6c3648886bfc867e28fa90c44}{get\+User\+Pointer}} ()
+\item 
+void \mbox{\hyperlink{classBody_a9d1f424ea14c38f03817e55dd8969931}{set\+Linear\+Velocity}} (glm\+::vec3)
+\item 
+glm\+::mat4 \mbox{\hyperlink{classBody_a11e21d7c0b5d3342ec427deb14a754e3}{get\+Model}} ()
+\item 
+bt\+Transform $\ast$ \mbox{\hyperlink{classBody_a27a07d7c129dfa15c54dd67a2906f9b5}{get\+World\+Transform}} ()
+\item 
+glm\+::vec3 \mbox{\hyperlink{classBody_a9d956c87e129f196c6a1086e3d8acecb}{get\+Linear\+Velocity}} ()
+\item 
+const bt\+Collision\+Object $\ast$ \mbox{\hyperlink{classBody_a7cbe4f00c7bbae395b5c51a0cc33907d}{ray\+Test}} (glm\+::vec3 position, glm\+::vec3 direction)
+\item 
+void \mbox{\hyperlink{classBody_a095f399575273d86a823babf0735f02b}{set\+Scale}} (bt\+Vector3)
+\item 
+glm\+::vec3 \mbox{\hyperlink{classBody_ac909b4e5bccd34d5c411520195c6fb94}{get\+Position}} (void)
+\item 
+void \mbox{\hyperlink{classBody_a4c6cdbeddf58955a6c751427cd0d4719}{set\+Position}} (glm\+::vec3)
+\item 
+glm\+::mat4 \mbox{\hyperlink{classBody_a3128b54ee44453d52b88ab34e7dea1bb}{get\+Transform}} (void)
+\item 
+void \mbox{\hyperlink{classBody_a89ea1d7c2a0de2e11b5087a2d9d53296}{set\+Transform}} (glm\+::mat4)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBody_a942ced86911289343effadb593544412}\label{classBody_a942ced86911289343effadb593544412}} 
+\index{Body@{Body}!Body@{Body}}
+\index{Body@{Body}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{Body()}{Body()}}
+{\footnotesize\ttfamily Body\+::\+Body (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPhysics}{Physics}} $\ast$}]{physics,  }\item[{bt\+Rigid\+Body $\ast$}]{body }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBody_abe1c4da65568cf7978b6247affc461e3}\label{classBody_abe1c4da65568cf7978b6247affc461e3}} 
+\index{Body@{Body}!````~Body@{$\sim$Body}}
+\index{````~Body@{$\sim$Body}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{$\sim$Body()}{~Body()}}
+{\footnotesize\ttfamily Body\+::$\sim$\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBody_a9d956c87e129f196c6a1086e3d8acecb}\label{classBody_a9d956c87e129f196c6a1086e3d8acecb}} 
+\index{Body@{Body}!getLinearVelocity@{getLinearVelocity}}
+\index{getLinearVelocity@{getLinearVelocity}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{getLinearVelocity()}{getLinearVelocity()}}
+{\footnotesize\ttfamily glm\+::vec3 Body\+::get\+Linear\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBody_a11e21d7c0b5d3342ec427deb14a754e3}\label{classBody_a11e21d7c0b5d3342ec427deb14a754e3}} 
+\index{Body@{Body}!getModel@{getModel}}
+\index{getModel@{getModel}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{getModel()}{getModel()}}
+{\footnotesize\ttfamily glm\+::mat4 Body\+::get\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBody_ac909b4e5bccd34d5c411520195c6fb94}\label{classBody_ac909b4e5bccd34d5c411520195c6fb94}} 
+\index{Body@{Body}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily glm\+::vec3 Body\+::get\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+return the object position \mbox{\Hypertarget{classBody_a3128b54ee44453d52b88ab34e7dea1bb}\label{classBody_a3128b54ee44453d52b88ab34e7dea1bb}} 
+\index{Body@{Body}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily glm\+::mat4 Body\+::get\+Transform (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBody_a39d9eff6c3648886bfc867e28fa90c44}\label{classBody_a39d9eff6c3648886bfc867e28fa90c44}} 
+\index{Body@{Body}!getUserPointer@{getUserPointer}}
+\index{getUserPointer@{getUserPointer}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{getUserPointer()}{getUserPointer()}}
+{\footnotesize\ttfamily void $\ast$ Body\+::get\+User\+Pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBody_a27a07d7c129dfa15c54dd67a2906f9b5}\label{classBody_a27a07d7c129dfa15c54dd67a2906f9b5}} 
+\index{Body@{Body}!getWorldTransform@{getWorldTransform}}
+\index{getWorldTransform@{getWorldTransform}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{getWorldTransform()}{getWorldTransform()}}
+{\footnotesize\ttfamily bt\+Transform $\ast$ Body\+::get\+World\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBody_a7cbe4f00c7bbae395b5c51a0cc33907d}\label{classBody_a7cbe4f00c7bbae395b5c51a0cc33907d}} 
+\index{Body@{Body}!rayTest@{rayTest}}
+\index{rayTest@{rayTest}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{rayTest()}{rayTest()}}
+{\footnotesize\ttfamily const bt\+Collision\+Object $\ast$ Body\+::ray\+Test (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{position,  }\item[{glm\+::vec3}]{direction }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBody_a9d1f424ea14c38f03817e55dd8969931}\label{classBody_a9d1f424ea14c38f03817e55dd8969931}} 
+\index{Body@{Body}!setLinearVelocity@{setLinearVelocity}}
+\index{setLinearVelocity@{setLinearVelocity}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{setLinearVelocity()}{setLinearVelocity()}}
+{\footnotesize\ttfamily void Body\+::set\+Linear\+Velocity (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{velocity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBody_a4c6cdbeddf58955a6c751427cd0d4719}\label{classBody_a4c6cdbeddf58955a6c751427cd0d4719}} 
+\index{Body@{Body}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Body\+::set\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{glm\+\_\+position }\end{DoxyParamCaption})}
+
+define the object position \mbox{\Hypertarget{classBody_a095f399575273d86a823babf0735f02b}\label{classBody_a095f399575273d86a823babf0735f02b}} 
+\index{Body@{Body}!setScale@{setScale}}
+\index{setScale@{setScale}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void Body\+::set\+Scale (\begin{DoxyParamCaption}\item[{bt\+Vector3}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBody_a89ea1d7c2a0de2e11b5087a2d9d53296}\label{classBody_a89ea1d7c2a0de2e11b5087a2d9d53296}} 
+\index{Body@{Body}!setTransform@{setTransform}}
+\index{setTransform@{setTransform}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{setTransform()}{setTransform()}}
+{\footnotesize\ttfamily void Body\+::set\+Transform (\begin{DoxyParamCaption}\item[{glm\+::mat4}]{model }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBody_a2a601245c702486f7260004ed3b5df82}\label{classBody_a2a601245c702486f7260004ed3b5df82}} 
+\index{Body@{Body}!setUserPointer@{setUserPointer}}
+\index{setUserPointer@{setUserPointer}!Body@{Body}}
+\doxysubsubsection{\texorpdfstring{setUserPointer()}{setUserPointer()}}
+{\footnotesize\ttfamily void Body\+::set\+User\+Pointer (\begin{DoxyParamCaption}\item[{void $\ast$}]{pointer }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{body_8hpp}{body.\+hpp}}\item 
+src/\mbox{\hyperlink{body_8cpp}{body.\+cpp}}\end{DoxyCompactItemize}
