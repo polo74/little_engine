@@ -1,3 +1,0 @@
-/home/paul/Documents/programs/basket/build/CMakeFiles/rebuild_cache.dir
-/home/paul/Documents/programs/basket/build/CMakeFiles/edit_cache.dir
-/home/paul/Documents/programs/basket/build/CMakeFiles/Basket.dir
