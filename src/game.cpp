@@ -31,18 +31,19 @@ int game(int argc, char **argv)
 
 		transform.setIdentity();
 		transform.setOrigin(btVector3(btScalar(0), btScalar(fallHeight), btScalar(0)));
+		//transform.setOrigin(btVector3(btScalar(0), btScalar(100), btScalar(100)));
 
 		motionState = new btDefaultMotionState(transform);
 		collisionShape = new btSphereShape(btScalar(1));
 		localInertia = btVector3(btScalar(0.), btScalar(0.), btScalar(0.));
 
-		//collisionShape->calculateLocalInertia(mass, localInertia);
+		collisionShape->calculateLocalInertia(mass, localInertia);
 
 		body = new btRigidBody(mass, motionState, collisionShape, localInertia);
 
 		player = new AnimatedEntity(NULL, new Body(&physics, body));
 
-		physics.addRigidBody(body);
+		//physics.addRigidBody(body);
 	}
 
 	// Create the camera
@@ -103,13 +104,6 @@ int game(int argc, char **argv)
 		entities.add(entity);
 	}
 
-	// Drop a ball
-
-	{
-		btRigidBody * body = drop(glm::vec3(0, 100, 100), glm::vec3(0, -9, -10));
-		Entity * entity = new Entity(new Mesh("ball"), new Body(&physics, body)) ;
-		entities.add(entity);
-	}
 
 	while (!glfwWindowShouldClose(window.getWindow()))
 	{
@@ -127,9 +121,22 @@ int game(int argc, char **argv)
 
 		if (Keys::fire)
 		{
-			btRigidBody * body = drop(glm::vec3(0, 100, 100), glm::vec3(0, 0, -10));
-			Entity * entity = new Entity(new Mesh("ball"), new Body(&physics, body));
-			entities.add(entity);
+			// Drop a ball
+			{
+				glm::mat4 transform = player->getBody()->getTransform();
+
+				glm::vec3 scale;
+				glm::quat rotation;
+				glm::vec3 position;
+				glm::vec3 skew;
+				glm::vec4 perspective;
+
+				glm::decompose(transform, scale, rotation, position, skew, perspective);
+
+				btRigidBody * body = drop(position, glm::vec3(0, -9, -10));
+				Entity * entity = new Entity(new Mesh("ball"), new Body(&physics, body)) ;
+				entities.add(entity);
+			}
 		}
 
 		keys.update(window.getWindow());
@@ -182,7 +189,7 @@ btRigidBody * drop(glm::vec3 from, glm::vec3 velocity)
 	btVector3 localInertia;
 	btRigidBody * body;
 
-	const float mass = 10000.0f;
+	const float mass = 80.0f;
 
 	transform.setIdentity();
 	transform.setOrigin(btVector3(btScalar(from.x), btScalar(from.y), btScalar(from.z)));
