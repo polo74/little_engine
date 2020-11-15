@@ -26,7 +26,7 @@ int game(int argc, char **argv)
 		btVector3 localInertia;
 		btRigidBody * body;
 
-		const float mass = 80.0f;
+		const float mass = 0.0f;
 		float fallHeight = 100.f;
 
 		transform.setIdentity();
