@@ -133,7 +133,20 @@ int game(int argc, char **argv)
 
 				glm::decompose(transform, scale, rotation, position, skew, perspective);
 
-				btRigidBody * body = drop(position, glm::vec3(0, -9, -10));
+				glm::vec4 start = glm::vec4(position, 1.0f);
+				glm::vec4 velocity = glm::vec4(position, 1.0f);
+
+				{
+					start = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f)) * start;
+					start = glm::vec4(position, 0.0f) + (glm::toMat4(rotation) * (start - glm::vec4(position, 0.0f)));
+				}
+
+				{
+					velocity = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 5.0f)) * velocity;
+					velocity = (glm::toMat4(rotation) * (velocity - glm::vec4(position, 0.0f)));
+				}
+
+				btRigidBody * body = drop(start, velocity);
 				Entity * entity = new Entity(new Mesh("ball"), new Body(&physics, body)) ;
 				entities.add(entity);
 			}
