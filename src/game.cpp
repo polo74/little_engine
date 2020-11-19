@@ -105,6 +105,7 @@ int game(int argc, char **argv)
 	}
 
 
+	float power = 0;
 	while (!glfwWindowShouldClose(window.getWindow()))
 	{
 		// move depend of the keys
@@ -120,6 +121,11 @@ int game(int argc, char **argv)
 		}
 
 		if (Keys::fire)
+		{
+			power += 5 * window.getEllapsedTime();
+			fprintf(stdout, "%f\n", power);
+		}
+		else if(power != 0)
 		{
 			// Drop a ball
 			{
@@ -142,7 +148,7 @@ int game(int argc, char **argv)
 				}
 
 				{
-					velocity = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 5.0f)) * velocity;
+					velocity = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, power)) * velocity;
 					velocity = (glm::toMat4(rotation) * (velocity - glm::vec4(position, 0.0f)));
 				}
 
@@ -150,6 +156,7 @@ int game(int argc, char **argv)
 				Entity * entity = new Entity(new Mesh("ball"), new Body(&physics, body)) ;
 				entities.add(entity);
 			}
+			power = 0;
 		}
 
 		keys.update(window.getWindow());
