@@ -108,12 +108,12 @@ int game(int argc, char **argv)
 	while (!glfwWindowShouldClose(window.getWindow()))
 	{
 		// move depend of the keys
-
+/*
 		{
 			if (Keys::forward || Keys::rearward || Keys::right || Keys::left)
 				player->move(glm::vec3((Keys::left - Keys::right) * .1f, 0, (Keys::forward - Keys::rearward) * .1f));
 		}
-
+*/
 		if (Keys::look_right || Keys::look_left || Keys::look_up)
 		{
 			player->rotate(glm::vec3(Keys::look_up * .1f, (Keys::look_left - Keys::look_right) * .1f, 0.0f));
