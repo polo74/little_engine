@@ -104,7 +104,6 @@ int game(int argc, char **argv)
 		entities.add(entity);
 	}
 
-
 	float power = 0;
 	while (!glfwWindowShouldClose(window.getWindow()))
 	{
@@ -160,8 +159,6 @@ int game(int argc, char **argv)
 		}
 
 		keys.update(window.getWindow());
-		//player->update();
-		//entities.update();
 		physics.update(window.getEllapsedTime());
 
 		int width = window.getWidth();
@@ -170,33 +167,33 @@ int game(int argc, char **argv)
 		glm::mat4 view = camera->view();
 		glm::mat4 projection = camera->projection();
 
-		display.clear();
-
-		std::vector<Entity *> tmp = * entities.getEntities();
-		for (int i = 0; i < tmp.size() ; i++)
 		{
-			glm::mat4 model = tmp[i]->getBody()->getTransform();
-			tmp[i]->getMesh()->draw(model, view, projection);
+			display.clear();
+
+			// draw the physics bullet debug
+			{
+				glm::mat4 model = glm::mat4(1);
+				physics.debugDraw();
+				debug.draw(model, view, projection);
+			}
+
+			//Draw each entity
+			{
+				std::vector<Entity *> tmp = * entities.getEntities();
+				for (int i = 0; i < tmp.size() ; i++)
+				{
+					glm::mat4 model = tmp[i]->getBody()->getTransform();
+					tmp[i]->getMesh()->draw(model, view, projection);
+				}
+			}
+
+
+			{
+				gui.drawBox(glm::mat4(1.0f), glm::mat4(1.0f), glm::mat4(1.0f), glm::vec3(1.0f, 1.0f, 0));
+			}
+
+			display.draw(&window);
 		}
-
-		{
-			//glm::mat4 model = player->getBody()->getTransform();
-			//player->getMesh()->draw(model, view, projection);
-		}
-		physics.debugDraw();
-
-		glm::mat4 model = glm::mat4(1);
-		debug.draw(model, view, projection);
-
-		projection = glm::ortho(0.0f, (float)width, 0.0f, (float)height);
-
-		glm::mat4 translate = glm::translate(glm::mat4(1.0f), glm::vec3(50, 50, 0.0f));
-		glm::mat4 scale = glm::scale(glm::mat4(1), glm::vec3(.5, .5, 1));
-		model = translate * scale;
-
-		gui.draw(model, glm::mat4(1), projection, glm::vec3(255, 255.0, 0), "le test du test");
-
-		display.draw(&window);
 	}
 	return 0;
 }

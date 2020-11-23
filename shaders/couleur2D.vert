@@ -1,28 +1,16 @@
-// Version du GLSL
+#version 330
 
-#version 130
+layout (location = 0) in vec2 in_vertex;
 
-// Entrées
+out vec3 med_color;
 
-in vec2 in_Vertex;
-in vec3 in_Color;
-
-
-// Sortie
-
-out vec3 color;
-
-
-// Fonction main
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+uniform vec3 color;
 
 void main()
 {
-    // Position finale du vertex
-
-    gl_Position = vec4(in_Vertex, 0.0, 1.0);
-
-
-    // Envoi de la couleur au Fragment Shader
-
-    color = in_Color;
+	med_color = color;
+	gl_Position = vec4(in_vertex, 0.0, 1.0);
 }

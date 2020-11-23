@@ -15,5 +15,5 @@ void main()
 {
 	gl_Position = projection * view * model * vec4(in_Vertex, 1.0);
 
-	uvs= in_uvs;
+	uvs = in_uvs;
 }

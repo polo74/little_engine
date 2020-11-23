@@ -18,7 +18,8 @@ class Gui
 {
 	public:
 		Gui();
-		void draw(glm::mat4, glm::mat4, glm::mat4 projection, glm::vec3, const GLchar * text);
+		void drawText(glm::mat4, glm::mat4, glm::mat4, glm::vec3, const GLchar *);
+		void drawBox(glm::mat4, glm::mat4, glm::mat4, glm::vec3);
 	private:
 		Shader * shader; 
 		GLuint vertexBuffer;

@@ -1,23 +1,10 @@
-// Version du GLSL
+#version 330
 
-#version 130
+in vec3 med_color;
 
-
-// Entrée
-
-in vec3 color;
-
-
-// Sortie 
-
-out vec4 out_Color;
-
-
-// Fonction main
+out vec4 out_color;
 
 void main()
 {
-    // Couleur finale du pixel
-
-    out_Color = vec4(1,0, 1,0, 1,0, 1.0);
+    out_color = vec4(med_color, 1.0f);
 }
