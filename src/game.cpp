@@ -189,7 +189,10 @@ int game(int argc, char **argv)
 
 
 			{
-				gui.drawBox(glm::mat4(1.0f), glm::mat4(1.0f), glm::mat4(1.0f), glm::vec3(1.0f, 1.0f, 0));
+				glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -.9f, 0));
+				model = glm::scale(model, glm::vec3((1/power), .025, 1));
+				glm::mat4 projection = glm::ortho(-10, 10, -10, 10);
+				gui.drawBox(model, glm::mat4(1.0f), glm::mat4(1.0f), glm::vec3(1.0f - 1.0f/power, 1.0f/power, 0));
 			}
 
 			display.draw(&window);

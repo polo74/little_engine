@@ -12,5 +12,5 @@ uniform vec3 color;
 void main()
 {
 	med_color = color;
-	gl_Position = vec4(in_vertex, 0.0, 1.0);
+	gl_Position = projection * view * model * vec4(in_vertex, 0.0, 1.0);
 }

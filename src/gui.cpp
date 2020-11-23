@@ -48,10 +48,13 @@ void Gui::drawBox(glm::mat4 model, glm::mat4 view, glm::mat4 projection, glm::ve
 */
 
 	GLfloat vertices[] = {
-		-0.5f, -0.5f,
-		0.5f, -0.5f,
-		0.0f,  0.5f
+		-1.0f, -1.0f,
+		-1.0f, 1.0f, 
+		1.0f, 1.0f, 
 
+		-1.0f, -1.0f,
+		1.0f, -1.0f, 
+		1.0f, 1.0f, 
 	};
 
 	GLuint vertexBuffer;
