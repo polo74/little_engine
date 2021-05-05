@@ -2,14 +2,18 @@
 
 Display::Display()
 {
-	glewExperimental=GL_TRUE;
+	//glewExperimental=GL_TRUE;
 	GLenum err = glewInit();
-	if (GLEW_OK != err)
+	if (err == GLEW_OK)
+	{
+		fprintf(stdout, "initialisation de glew : OK\n");
+	}
+	else
 	{
 		fprintf(stderr, "Display Error: %s\n", glewGetErrorString(err));
+		exit(EXIT_FAILURE);
 	}
 	fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
-
 
 	glEnable(GL_BLEND);
 	glEnable(GL_DEPTH_TEST);

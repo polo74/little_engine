@@ -20,7 +20,7 @@ Mesh::Mesh(const char * name)
 	strcat(tmp, ".bmp");
 	set_texture(tmp);
 
-	loadShader("shaders/textures3D.vert", "shaders/textures3D.frag");
+	loadShader("data/shaders/textures3D.vert", "data/shaders/textures3D.frag");
 
 	glGenBuffers(1, &vertexBuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);

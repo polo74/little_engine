@@ -1,3 +1,0 @@
-/home/paul/Documents/programs/dropIt/build/CMakeFiles/rebuild_cache.dir
-/home/paul/Documents/programs/dropIt/build/CMakeFiles/edit_cache.dir
-/home/paul/Documents/programs/dropIt/build/CMakeFiles/Basket.dir

@@ -5,7 +5,7 @@ Gui::Gui(){
 	fprintf(stdout, "loadGui !\n");
 
 	characters = new Characters();
-	shader = new Shader("shaders/character2D.vert", "shaders/character2D.frag");
+	shader = new Shader("data/shaders/character2D.vert", "data/shaders/character2D.frag");
 }
 
 void Gui::drawText(glm::mat4 model, glm::mat4 view, glm::mat4 projection, glm::vec3 color, const GLchar * text)
@@ -36,7 +36,7 @@ void Gui::drawText(glm::mat4 model, glm::mat4 view, glm::mat4 projection, glm::v
 void Gui::drawBox(glm::mat4 model, glm::mat4 view, glm::mat4 projection, glm::vec3 color)
 {
 
-	Shader * shader = new Shader("shaders/couleur2D.vert", "shaders/couleur2D.frag");
+	Shader * shader = new Shader("data/shaders/couleur2D.vert", "data/shaders/couleur2D.frag");
 	shader->charger();
 /*
 	for(int i = 0; i < 4; i++)

@@ -7,6 +7,8 @@
 
 #include <iostream>
 
+#define GLEW_STATIC
+
 class Window
 {
 	public:

@@ -3,7 +3,7 @@
 Debug::Debug():
 	debugMode (DBG_MAX_DEBUG_DRAW_MODE)
 {
-	loadShader("shaders/couleur3D.vert", "shaders/couleur3D.frag");
+	loadShader("data/shaders/couleur3D.vert", "data/shaders/couleur3D.frag");
 	glGenBuffers(1, &vertexBuffer);
 	glGenBuffers(1, &colorBuffer);
 }

@@ -7,7 +7,7 @@ SET(CMAKE_BUILD_TYPE Debug)
 
 #set(OSMIUM_INCLUDE_DIRS /usr/include/osmium)
 
-#set(OpenGL_GL_PREFERENCE "GLVND")
+set(OpenGL_GL_PREFERENCE "GLVND")
 
 file (GLOB_RECURSE SRC ${PROJECT_SOURCE_DIR}/src/*)
 

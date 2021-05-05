@@ -5,7 +5,7 @@ Characters::Characters() :
 {
 	// Load the shader
 	
-	shader = new Shader("shaders/character2D.vert", "shaders/character2D.frag");
+	shader = new Shader("data/shaders/character2D.vert", "data/shaders/character2D.frag");
 	//shader = new Shader("shaders/texture2D.vert", "shaders/texture2D.frag");
 	shader->charger();
 
@@ -17,7 +17,7 @@ Characters::Characters() :
 	if (FT_Init_FreeType(&ft))
 		fprintf (stderr, "ERROR::FREETYPE: Could not init FreeType Library\n");
 
-	if (FT_New_Face(ft, "fonts/monospace.ttf", 0, &face))
+	if (FT_New_Face(ft, "data/fonts/monospace.ttf", 0, &face))
 		fprintf(stderr, "ERROR::FREETYPE: Failed to load font\n");
 
 	if (FT_Load_Char(face, 'X', FT_LOAD_RENDER))

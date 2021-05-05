@@ -14,19 +14,32 @@ Window::Window():
 	glfwSetErrorCallback(this->ErrorCallback);
 
 	// Init GLFW
-        if (!glfwInit())
+        if (glfwInit() == GLFW_TRUE)
+	{
+		fprintf(stdout, "GLFW init sucessfull !\n");
+	}
+	else
+	{
                 fprintf(stderr, "%s\n", "ATTENTION : erreur d'initialisation de GLFW");
+		exit(EXIT_FAILURE);
+	}
 
 	GLFWmonitor * monitor = glfwGetPrimaryMonitor();
 	const GLFWvidmode* mode = glfwGetVideoMode(monitor);
 	width = mode->width;
 	height = mode->height;
 
-        window = glfwCreateWindow(width, height, "Hello World", glfwGetPrimaryMonitor(), NULL);
-        if (!window)
+	window = glfwCreateWindow(width, height, "Hello World", glfwGetPrimaryMonitor(), NULL);
+        //window = glfwCreateWindow(width, height, "Hello World", NULL, NULL);
+        if (window)
+	{
+		fprintf(stdout, "création d'une fenètre réussie ! \n");
+	}
+	else
         {
                 glfwTerminate();
                 fprintf(stderr, "%s\n", "ATTENTION : Erreur de créatin de la fenetre GLFW");
+		exit(EXIT_FAILURE);
         }
 
         glfwMakeContextCurrent(window);
