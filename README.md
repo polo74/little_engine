@@ -1,4 +1,6 @@
-# Game
+# Little Engine
+
+Just a little and experimental game engine using ```C++```, ```OpenGL``` and ```GLFW```
 
 ## Depedencies
 
